@@ -117,10 +117,10 @@ app.put(
 
 // Delete
 app.delete(
-  "/user",
+  "/users",
   handleRouteError(async (req, res) => {
-    const { data } = req.body;
-    const { message } = await deleteUser(data.id);
+    const { id } = req.body;
+    const { message } = await deleteUser(id);
     res.status(201).json({ message });
   })
 );
