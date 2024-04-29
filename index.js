@@ -118,7 +118,7 @@ app.delete(
   "/user",
   handleRouteError(async (req, res) => {
     const { data } = req.body;
-    const { message } = await UserController.deleteUser(data.id);
+    const { message } = await deleteUser(data.id);
     res.status(201).json({ message });
   })
 );
