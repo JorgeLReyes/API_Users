@@ -9,7 +9,7 @@ const supabaseUrl = process.env.JS_SUPABASE_URL;
 const supabaseKey = process.env.JS_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
