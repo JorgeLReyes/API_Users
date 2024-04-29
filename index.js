@@ -115,10 +115,10 @@ app.put(
 
 // Delete
 app.delete(
-  "/users",
+  "/user",
   handleRouteError(async (req, res) => {
-    const { id } = req.body;
-    const { message } = await deleteUser(id);
+    const { data } = req.body;
+    const { message } = await UserController.deleteUser(data.id);
     res.status(201).json({ message });
   })
 );
